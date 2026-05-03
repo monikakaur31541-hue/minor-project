@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login – FindIt</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+<div class="auth-page">
+  <!-- LEFT VISUAL -->
+  <div class="auth-visual">
+    <div class="nav-logo"><span class="dot">●</span> FindIt</div>
+    <h2>Welcome Back,<br/>Campus Hero.</h2>
+    <p>Log in to manage your lost and found posts, contact item owners, and help reunite students with their belongings.</p>
+    <div class="auth-features">
+      <div class="auth-feature"><i class="fas fa-check-circle"></i> View and manage your posts</div>
+      <div class="auth-feature"><i class="fas fa-check-circle"></i> Message finders & owners</div>
+      <div class="auth-feature"><i class="fas fa-check-circle"></i> Get notified on matches</div>
+      <div class="auth-feature"><i class="fas fa-check-circle"></i> Secure college-only access</div>
+    </div>
+
+    <!-- Floating cards decoration -->
+    <div style="margin-top:2.5rem;display:flex;flex-direction:column;gap:0.7rem;max-width:300px">
+      <div class="item-chip"><img src="https://img.icons8.com/fluency/48/iphone.png"/><span style="color:rgba(255,255,255,0.75);font-size:0.82rem">iPhone found — Cafeteria 🎉</span></div>
+      <div class="item-chip"><img src="https://img.icons8.com/fluency/48/backpack.png"/><span style="color:rgba(255,255,255,0.75);font-size:0.82rem">Backpack claimed — Library ✅</span></div>
+    </div>
+  </div>
+
+  <!-- RIGHT FORM -->
+  <div class="auth-form-section">
+    <div class="auth-form-box">
+      <h3>Log In</h3>
+      <p>Enter your college credentials to continue.</p>
+
+      <button class="social-btn"><img src="https://img.icons8.com/color/24/google-logo.png" alt="google"/> Continue with Google</button>
+
+      <div class="auth-divider">or login with email</div>
+
+      <form onsubmit="handleLogin(event)">
+        <div class="form-group">
+          <label>College Email</label>
+          <div class="input-icon">
+            <i class="fas fa-envelope"></i>
+            <input type="email" id="loginEmail" placeholder="yourname@college.edu" required/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <div class="input-icon">
+            <i class="fas fa-lock"></i>
+            <input type="password" id="loginPass" placeholder="••••••••" required/>
+          </div>
+        </div>
+        <div class="remember-row">
+          <label><input type="checkbox"/> Remember me</label>
+          <a href="#">Forgot password?</a>
+        </div>
+        <button type="submit" class="auth-submit">Log In <i class="fas fa-arrow-right"></i></button>
+      </form>
+
+      <div class="auth-link">
+        Don't have an account? <a href="signup.html">Sign Up</a>
+      </div>
+
+      <div style="text-align:center;margin-top:1rem">
+        <a href="index.html" style="color:var(--muted);font-size:0.85rem"><i class="fas fa-arrow-left"></i> Back to Home</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SUCCESS TOAST -->
+<div id="toast" style="display:none;position:fixed;bottom:2rem;right:2rem;background:var(--primary);color:#fff;padding:1rem 1.5rem;border-radius:14px;font-family:'Syne',sans-serif;font-weight:600;box-shadow:0 8px 30px rgba(0,0,0,0.2);z-index:9999;border-left:4px solid var(--accent)">
+  <i class="fas fa-check-circle" style="color:var(--accent)"></i> Logged in successfully! Redirecting...
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

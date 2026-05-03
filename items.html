@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lost & Found Items – FindIt</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-logo"><span class="dot">●</span> FindIt</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="items.html" class="active">Items</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="login.html" class="btn-outline">Log In</a>
+    <a href="signup.html" class="btn-fill">Sign Up</a>
+  </div>
+  <button class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="items.html">Items</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="login.html">Log In</a>
+  <a href="signup.html">Sign Up</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-content">
+    <div class="section-label">CAMPUS BOARD</div>
+    <h1>Lost & Found Items</h1>
+    <p>Browse items reported across campus. Found your item? Contact the finder directly.</p>
+  </div>
+</div>
+
+<!-- ITEMS SECTION -->
+<section class="items-section">
+  <!-- FILTERS -->
+  <div class="filters-bar">
+    <div class="search-box">
+      <i class="fas fa-search"></i>
+      <input type="text" id="searchInput" placeholder="Search items by name, location..." oninput="filterItems()"/>
+    </div>
+    <select class="filter-select" id="categoryFilter" onchange="filterItems()">
+      <option value="">All Categories</option>
+      <option value="electronics">Electronics</option>
+      <option value="bags">Bags</option>
+      <option value="wallet">Wallet & Cards</option>
+      <option value="books">Books & Notes</option>
+      <option value="keys">Keys</option>
+      <option value="accessories">Accessories</option>
+    </select>
+    <select class="filter-select" id="locationFilter" onchange="filterItems()">
+      <option value="">All Locations</option>
+      <option value="library">Library</option>
+      <option value="cafeteria">Cafeteria</option>
+      <option value="lab">Computer Lab</option>
+      <option value="gym">Gym</option>
+      <option value="ground">Sports Ground</option>
+      <option value="block">Block A / B / C</option>
+    </select>
+    <button class="filter-tab active" onclick="setTab(this,'all')">All</button>
+    <button class="filter-tab" onclick="setTab(this,'found')">Found</button>
+    <button class="filter-tab" onclick="setTab(this,'lost')">Lost</button>
+  </div>
+
+  <p id="resultsCount" style="color:var(--muted);font-size:0.9rem;margin-bottom:1.5rem;"></p>
+
+  <!-- ITEMS GRID -->
+  <div class="full-items-grid" id="itemsGrid">
+
+    <div class="full-item-card" data-type="found" data-category="electronics" data-location="cafeteria">
+      <div class="card-img"><img src="https://img.icons8.com/fluency/96/iphone.png" alt="Phone"/></div>
+      <div class="card-body">
+        <div class="card-meta">
+          <span class="badge found-badge">Found</span>
+          <span style="color:var(--muted);font-size:0.75rem"><i class="fas fa-clock"></i> 2 hrs ago</span>
+        </div>
+        <h4>iPhone 14 – Black</h4>
+        <p><i class="fas fa-map-marker-alt"></i> Cafeteria, Block B</p>
+        <p><i class="fas fa-tag"></i> Electronics</p>
+        <p><i class="fas fa-user"></i> Posted by Rahul S.</p>
+        <div class="card-actions">
+          <a href="login.html" class="btn-primary-sm">Contact</a>
+          <span class="btn-secondary-sm">Details</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="full-item-card" data-type="lost" data-category="bags" data-location="library">
+      <div class="card-img" style="background:#e8f5e9"><img src="https://img.icons8.com/fluency/96/backpack.png" alt="Bag"/></div>
+      <div class="card-body">
+        <div class="card-meta">
+          <span class="badge lost-badge">Lost</span>
+          <span style="color:var(--muted);font-size:0.75rem"><i class="fas fa-clock"></i> 5 hrs ago</span>
+        </div>
+        <h4>Blue Nike Backpack</h4>
+        <p><i class="fas fa-map-marker-alt"></i> Library, 2nd Floor</p>
+        <p><i class="fas fa-tag"></i> Bags</p>
+        <p><i class="fas fa-user"></i> Posted by Priya M.</p>
+        <div class="card-actions">
+          <a href="login.html" class="btn-primary-sm">I Found It!</a>
+          <span class="btn-secondary-sm">Details</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="full-item-card" data-type="found" data-category="accessories" data-location="lab">
+      <div class="card-img" style="background:#fce4ec"><img src="https://img.icons8.com/fluency/96/glasses.png" alt="Glasses"/></div>
+      <div class="card-body">
+        <div class="card-meta">
+          <span class="badge found-badge">Found</span>
+          <span style="color:var(--muted);font-size:0.75rem"><i class="fas fa-clock"></i> 1 day ago</span>
+        </div>
+        <h4>Reading Glasses (Black Frame)</h4>
+        <p><i class="fas fa-map-marker-alt"></i> Computer Lab 3</p>
+        <p><i class="fas fa-tag"></i> Accessories</p>
+        <p><i class="fas fa-user"></i> Posted by Arjun K.</p>
+        <div class="card-actions">
+          <a href="login.html" class="btn-primary-sm">Contact</a>
+          <span class="btn-secondary-sm">Details</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="full-item-card" data-type="lost" data-category="wallet" data-location="ground">
+      <div class="card-img" style="background:#fff8e1"><img src="https://img.icons8.com/fluency/96/wallet.png" alt="Wallet"/></div>
+      <div class="card-body">
+        <div class="card-meta">
+          <span class="badge lost-badge">Lost</span>
+          <span style="color:var(--muted);font-size:0.75rem"><i class="fas fa-clock"></i> 1 day ago</span>
+        </div>
+        <h4>Brown Leather Wallet</h4>
+        <p><i class="fas fa-map-marker-alt"></i> Sports Ground</p>
+        <p><i class="fas fa-tag"></i> Wallet & Cards</p>
+        <p><i class="fas fa-user"></i> Posted by Sneha R.</p>
+        <div class="card-actions">
+          <a href="login.html" class="btn-primary-sm">I Found It!</a>
+          <span class="btn-secondary-sm">Details</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="full-item-card" data-type="found" data-category="keys" data-location="gym">
+      <div class="card-img" style="background:#e8eaf6"><img src="https://img.icons8.com/fluency/96/key.png" alt="Key"/></div>
+      <div class="card-body">
+        <div class="card-meta">
+          <span class="badge found-badge">Found</span>
+          <span style="color:var(--muted);font-size:0.75rem"><i class="fas fa-clock"></i> 2 days ago</span>
+        </div>
+        <h4>Set of Keys (3 keys)</h4>
+        <p><i class="fas fa-map-marker-alt"></i> Gym Entrance</p>
+        <p><i class="fas fa-tag"></i> Keys</p>
+        <p><i class="fas fa-user"></i> Posted by Dev P.</p>
+        <div class="card-actions">
+          <a href="login.html" class="btn-primary-sm">Contact</a>
+          <span class="btn-secondary-sm">Details</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="full-item-card" data-type="lost" data-category="electronics" data-location="block">
+      <div class="card-img" style="background:#e3f2fd"><img src="https://img.icons8.com/fluency/96/laptop.png" alt="Laptop"/></div>
+      <div class="card-body">
+        <div class="card-meta">
+          <span class="badge lost-badge">Lost</span>
+          <span style="color:var(--muted);font-size:0.75rem"><i class="fas fa-clock"></i> 2 days ago</span>
+        </div>
+        <h4>Dell Laptop Charger</h4>
+        <p><i class="fas fa-map-marker-alt"></i> Block A, Room 204</p>
+        <p><i class="fas fa-tag"></i> Electronics</p>
+        <p><i class="fas fa-user"></i> Posted by Ankit V.</p>
+        <div class="card-actions">
+          <a href="login.html" class="btn-primary-sm">I Found It!</a>
+          <span class="btn-secondary-sm">Details</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="full-item-card" data-type="found" data-category="books" data-location="library">
+      <div class="card-img" style="background:#f3e5f5"><img src="https://img.icons8.com/fluency/96/book.png" alt="Book"/></div>
+      <div class="card-body">
+        <div class="card-meta">
+          <span class="badge found-badge">Found</span>
+          <span style="color:var(--muted);font-size:0.75rem"><i class="fas fa-clock"></i> 3 days ago</span>
+        </div>
+        <h4>Data Structures Textbook</h4>
+        <p><i class="fas fa-map-marker-alt"></i> Library Reading Room</p>
+        <p><i class="fas fa-tag"></i> Books & Notes</p>
+        <p><i class="fas fa-user"></i> Posted by Kavya T.</p>
+        <div class="card-actions">
+          <a href="login.html" class="btn-primary-sm">Contact</a>
+          <span class="btn-secondary-sm">Details</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="full-item-card" data-type="lost" data-category="accessories" data-location="cafeteria">
+      <div class="card-img" style="background:#e0f7fa"><img src="https://img.icons8.com/fluency/96/headphones.png" alt="Headphones"/></div>
+      <div class="card-body">
+        <div class="card-meta">
+          <span class="badge lost-badge">Lost</span>
+          <span style="color:var(--muted);font-size:0.75rem"><i class="fas fa-clock"></i> 3 days ago</span>
+        </div>
+        <h4>Sony WH-1000XM4 Headphones</h4>
+        <p><i class="fas fa-map-marker-alt"></i> Cafeteria</p>
+        <p><i class="fas fa-tag"></i> Electronics / Accessories</p>
+        <p><i class="fas fa-user"></i> Posted by Meera J.</p>
+        <div class="card-actions">
+          <a href="login.html" class="btn-primary-sm">I Found It!</a>
+          <span class="btn-secondary-sm">Details</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- NO RESULTS MSG -->
+  <div id="noResults" style="display:none;text-align:center;padding:4rem 0">
+    <img src="https://img.icons8.com/fluency/96/search.png" style="opacity:0.4;margin-bottom:1rem"/>
+    <h3 style="color:var(--muted)">No items found</h3>
+    <p style="color:var(--muted);font-size:0.9rem">Try changing your search or filters.</p>
+  </div>
+
+  <!-- POST ITEM CTA -->
+  <div class="post-item-cta">
+    <h3>Lost or Found Something?</h3>
+    <p>Post it on FindIt so the right person can see it. It takes less than 2 minutes.</p>
+    <a href="signup.html" class="btn-fill big">Post an Item <i class="fas fa-plus"></i></a>
+  </div>
+
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="nav-logo"><span class="dot">●</span> FindIt</div>
+      <p>A student initiative by the Information Technology Department.</p>
+    </div>
+    <div class="footer-links">
+      <h5>Pages</h5>
+      <a href="index.html">Home</a>
+      <a href="items.html">Lost & Found</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-links">
+      <h5>Account</h5>
+      <a href="login.html">Login</a>
+      <a href="signup.html">Sign Up</a>
+    </div>
+    <div class="footer-links">
+      <h5>Contact</h5>
+      <a href="#">findit@college.edu</a>
+      <a href="#">IT Department, Block C</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 FindIt — Made with ❤️ by IT Students</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

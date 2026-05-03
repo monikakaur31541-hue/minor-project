@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up – FindIt</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    .password-strength { height: 4px; border-radius: 4px; margin-top: 0.5rem; background: var(--border); overflow: hidden; }
+    .strength-bar { height: 100%; border-radius: 4px; width: 0%; transition: width 0.3s, background 0.3s; }
+    .strength-text { font-size: 0.75rem; color: var(--muted); margin-top: 0.3rem; }
+  </style>
+</head>
+<body>
+
+<div class="auth-page">
+  <!-- LEFT VISUAL -->
+  <div class="auth-visual">
+    <div class="nav-logo"><span class="dot">●</span> FindIt</div>
+    <h2>Join FindIt.<br/>Be a Campus<br/>Hero Today.</h2>
+    <p>Create your free account and become part of a community that helps students recover lost items every single day.</p>
+    <div class="auth-features">
+      <div class="auth-feature"><i class="fas fa-bolt"></i> Get started in under 2 minutes</div>
+      <div class="auth-feature"><i class="fas fa-shield-alt"></i> Verified college students only</div>
+      <div class="auth-feature"><i class="fas fa-bell"></i> Smart notifications when your item is found</div>
+      <div class="auth-feature"><i class="fas fa-heart"></i> Help build a caring campus community</div>
+    </div>
+
+    <!-- Stat pills -->
+    <div style="display:flex;gap:1rem;margin-top:2.5rem;flex-wrap:wrap">
+      <div style="background:rgba(244,162,67,0.15);border:1px solid rgba(244,162,67,0.25);border-radius:50px;padding:0.5rem 1rem;color:var(--accent);font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:700">240+ Items Recovered</div>
+      <div style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:50px;padding:0.5rem 1rem;color:rgba(255,255,255,0.7);font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:700">1200+ Students</div>
+    </div>
+  </div>
+
+  <!-- RIGHT FORM -->
+  <div class="auth-form-section">
+    <div class="auth-form-box">
+      <h3>Create Account</h3>
+      <p>Fill in your details to join FindIt.</p>
+
+      <button class="social-btn"><img src="https://img.icons8.com/color/24/google-logo.png" alt="google"/> Sign up with Google</button>
+
+      <div class="auth-divider">or sign up with email</div>
+
+      <form onsubmit="handleSignup(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" id="firstName" placeholder="Rahul" required/>
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" id="lastName" placeholder="Sharma" required/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>College Email</label>
+          <div class="input-icon">
+            <i class="fas fa-envelope"></i>
+            <input type="email" id="signupEmail" placeholder="yourname@college.edu" required/>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Branch</label>
+            <select id="branch">
+              <option>Information Technology</option>
+              <option>Computer Science</option>
+              <option>Electronics</option>
+              <option>Mechanical</option>
+              <option>Civil</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Year</label>
+            <select id="year">
+              <option>1st Year</option>
+              <option>2nd Year</option>
+              <option>3rd Year</option>
+              <option>4th Year</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <div class="input-icon">
+            <i class="fas fa-phone"></i>
+            <input type="tel" id="phone" placeholder="+91 98765 43210"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <div class="input-icon">
+            <i class="fas fa-lock"></i>
+            <input type="password" id="signupPass" placeholder="Create a strong password" oninput="checkStrength()" required/>
+          </div>
+          <div class="password-strength"><div class="strength-bar" id="strengthBar"></div></div>
+          <div class="strength-text" id="strengthText">Enter a password</div>
+        </div>
+        <div class="form-group">
+          <label>Confirm Password</label>
+          <div class="input-icon">
+            <i class="fas fa-lock"></i>
+            <input type="password" id="confirmPass" placeholder="Re-enter password" required/>
+          </div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:0.6rem;margin-bottom:1.2rem;font-size:0.85rem;color:var(--muted)">
+          <input type="checkbox" id="agreeTerms" required style="margin-top:0.2rem"/>
+          <label for="agreeTerms">I agree to the <a href="#" style="color:var(--accent);font-weight:700">Terms of Service</a> and <a href="#" style="color:var(--accent);font-weight:700">Privacy Policy</a></label>
+        </div>
+        <button type="submit" class="auth-submit">Create Account <i class="fas fa-arrow-right"></i></button>
+      </form>
+
+      <div class="auth-link">
+        Already have an account? <a href="login.html">Log In</a>
+      </div>
+      <div style="text-align:center;margin-top:1rem">
+        <a href="index.html" style="color:var(--muted);font-size:0.85rem"><i class="fas fa-arrow-left"></i> Back to Home</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="toast" style="display:none;position:fixed;bottom:2rem;right:2rem;background:var(--primary);color:#fff;padding:1rem 1.5rem;border-radius:14px;font-family:'Syne',sans-serif;font-weight:600;box-shadow:0 8px 30px rgba(0,0,0,0.2);z-index:9999;border-left:4px solid var(--accent)">
+  <i class="fas fa-check-circle" style="color:var(--accent)"></i> Account created! Welcome to FindIt 🎉
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

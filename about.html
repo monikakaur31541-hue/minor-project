@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About – FindIt</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-logo"><span class="dot">●</span> FindIt</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="items.html">Items</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="login.html" class="btn-outline">Log In</a>
+    <a href="signup.html" class="btn-fill">Sign Up</a>
+  </div>
+  <button class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a><a href="items.html">Items</a>
+  <a href="about.html">About</a><a href="contact.html">Contact</a>
+  <a href="login.html">Log In</a><a href="signup.html">Sign Up</a>
+</div>
+
+<!-- ABOUT HERO -->
+<section class="about-hero">
+  <div class="about-hero-content">
+    <div class="section-label">ABOUT FINDIT</div>
+    <h1>Built by Students,<br/><em style="color:var(--accent);font-style:normal">For Students</em></h1>
+    <p>FindIt is a campus-first Lost & Found platform developed by second-year students of the Information Technology department as a real-world capstone project.</p>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section class="about-mission">
+  <div class="mission-visual">
+    <div class="mission-stat-box">
+      <div class="icon">📦</div>
+      <span>240+</span><p>Items Recovered</p>
+    </div>
+    <div class="mission-stat-box">
+      <div class="icon">👥</div>
+      <span>1.2k</span><p>Active Students</p>
+    </div>
+    <div class="mission-stat-box">
+      <div class="icon">📍</div>
+      <span>15+</span><p>Campus Zones</p>
+    </div>
+    <div class="mission-stat-box">
+      <div class="icon">⭐</div>
+      <span>98%</span><p>Success Rate</p>
+    </div>
+  </div>
+  <div class="mission-text">
+    <div class="section-label">OUR MISSION</div>
+    <h2>Why We Built<br/>FindIt</h2>
+    <p>Every semester, hundreds of items get lost on campus — phones, wallets, books, keys — and most never make it back to their owners simply because there was no organized system to help.</p>
+    <p>We saw this problem firsthand and decided to solve it. FindIt was born as an IT department project but quickly became a real service adopted campus-wide. We believe technology should solve everyday problems for real people.</p>
+    <p>Our goal is simple: if something is lost on campus, FindIt should make sure it gets back to the right person.</p>
+    <a href="signup.html" class="btn-fill">Join FindIt Free <i class="fas fa-arrow-right"></i></a>
+  </div>
+</section>
+
+<!-- HOW IT WORKS DETAILED -->
+<section class="how-works-section">
+  <div class="section-label" style="text-align:center">HOW IT WORKS</div>
+  <h2>The FindIt Process,<br/>Step by Step</h2>
+  <div class="works-timeline">
+    <div class="timeline-item">
+      <div class="timeline-dot">1</div>
+      <div class="timeline-content">
+        <h4>Create Your Free Account</h4>
+        <p>Sign up using your college email address. We verify all users are enrolled students to ensure a safe and trusted community. Takes less than 2 minutes.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot">2</div>
+      <div class="timeline-content">
+        <h4>Post a Lost or Found Item</h4>
+        <p>Lost something? Post it with a description, photo, and where you last saw it. Found something? Post where you found it so the owner can claim it. You can add location tags, item category, date, and a description.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot">3</div>
+      <div class="timeline-content">
+        <h4>Smart Matching & Notifications</h4>
+        <p>Our system automatically matches lost and found posts by category and location. When a potential match is detected, both parties get notified instantly via email and in-app alert.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot">4</div>
+      <div class="timeline-content">
+        <h4>Secure In-App Messaging</h4>
+        <p>Communicate directly with the finder or owner through our built-in messaging system. No need to share personal phone numbers — your privacy is protected at all times.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot">5</div>
+      <div class="timeline-content">
+        <h4>Claim & Return</h4>
+        <p>Arrange to collect your item from the campus Lost & Found desk or directly from the finder at a safe public location. Once returned, mark the item as resolved to close the post.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM SECTION -->
+<section class="team-section">
+  <div class="section-label">THE TEAM</div>
+  <h2>Made by IT Students</h2>
+  <p>Second Year, Information Technology Department — Batch 2025–2027</p>
+  <div class="team-grid">
+    <div class="team-card">
+      <div class="team-avatar" style="background:#1a1a2e">N</div>
+      <p class="team-role">Project Lead</p>
+      <h4>Niharika</h4>
+      <p>Full Stack Development & Architecture</p>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar" style="background:#f4a243">LK</div>
+      <p class="team-role">UI/UX Designer</p>
+      <h4>Lovepreet Kaur</h4>
+      <p>Frontend Design & User Research</p>
+    </div>
+    
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<section class="tech-section">
+  <div class="section-label" style="text-align:center">TECH STACK</div>
+  <h2>Built With</h2>
+  <div class="tech-chips">
+    <div class="tech-chip"><i class="fab fa-html5"></i> HTML5</div>
+    <div class="tech-chip"><i class="fab fa-css3-alt"></i> CSS3</div>
+    <div class="tech-chip"><i class="fab fa-js"></i> JavaScript</div>
+    <div class="tech-chip"><i class="fab fa-react"></i> React.js</div>
+    <div class="tech-chip"><i class="fas fa-server"></i> Node.js</div>
+    <div class="tech-chip"><i class="fas fa-database"></i> MongoDB</div>
+  
+    <div class="tech-chip"><i class="fab fa-git-alt"></i> Git & GitHub</div>
+    
+    <div class="tech-chip"><i class="fas fa-mobile-alt"></i> Responsive Design</div>
+  </div>
+</section>
+
+<!-- PROJECT INFO -->
+<section style="padding:5rem 5%;background:#fff">
+  <div style="max-width:750px;margin:0 auto">
+    <div class="section-label">PROJECT INFO</div>
+    <h2 style="font-size:clamp(1.8rem,3.5vw,2.8rem);margin-bottom:2rem">Academic Context &<br/>Project Details</h2>
+    <div style="background:var(--light-bg);border-radius:20px;padding:2.5rem;display:grid;grid-template-columns:1fr 1fr;gap:1.5rem">
+      <div>
+        <p style="font-family:'Syne',sans-serif;font-size:0.75rem;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;margin-bottom:0.3rem">Department</p>
+        <p style="font-weight:500">Information Technology</p>
+      </div>
+      <div>
+        <p style="font-family:'Syne',sans-serif;font-size:0.75rem;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;margin-bottom:0.3rem">Project Type</p>
+        <p style="font-weight:500">Minor Project</p>
+      </div>
+      <div>
+        <p style="font-family:'Syne',sans-serif;font-size:0.75rem;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;margin-bottom:0.3rem">Academic Year</p>
+        <p style="font-weight:500">2025–2027</p>
+      </div>
+      <div>
+        <p style="font-family:'Syne',sans-serif;font-size:0.75rem;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;margin-bottom:0.3rem">Guide / Mentor</p>
+        <p style="font-weight:500">Mr.Mehakpreet Singh</p>
+      </div>
+      <div>
+        <p style="font-family:'Syne',sans-serif;font-size:0.75rem;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;margin-bottom:0.3rem">Institution</p>
+        <p style="font-weight:500">Guru Nanak Dev Polytechnic College</p>
+      </div>
+      <div>
+        <p style="font-family:'Syne',sans-serif;font-size:0.75rem;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;margin-bottom:0.3rem">Status</p>
+        <p style="font-weight:500;color:var(--green)">● Live & Active</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="nav-logo"><span class="dot">●</span> FindIt</div>
+      <p>A student initiative by the Information Technology Department.</p>
+    </div>
+    <div class="footer-links"><h5>Pages</h5>
+      <a href="index.html">Home</a><a href="items.html">Items</a>
+      <a href="about.html">About</a><a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-links"><h5>Account</h5>
+      <a href="login.html">Login</a><a href="signup.html">Sign Up</a>
+    </div>
+    <div class="footer-links"><h5>Contact</h5>
+      <a href="#">findit@college.edu</a><a href="#">IT Dept, Block C</a>
+    </div>
+  </div>
+  <div class="footer-bottom"><p>© 2025 FindIt — Made with ❤️ by IT Students</p></div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

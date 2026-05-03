@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FindIt – College Lost & Found</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="navbar">
+  <div class="nav-logo"><span class="dot">●</span> FindIt</div>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="items.html">Items</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="login.html" class="btn-outline">Log In</a>
+    <a href="signup.html" class="btn-fill">Sign Up</a>
+  </div>
+  <button class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="items.html">Items</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="login.html">Log In</a>
+  <a href="signup.html">Sign Up</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+    <div class="grid-overlay"></div>
+  </div>
+  <div class="hero-content">
+    <span class="hero-badge"><i class="fas fa-university"></i> Made by IT Students</span>
+    <h1>Lost Something<br/>on Campus?<br/><em>We'll Help You</em><br/>Find It.</h1>
+    <p class="hero-sub">FindIt is the official Lost & Found platform for college students. Report missing items, browse found items, and reunite with your belongings — all in one place.</p>
+    <div class="hero-btns">
+      <a href="items.html" class="btn-fill big">Browse Items <i class="fas fa-arrow-right"></i></a>
+      <a href="signup.html" class="btn-ghost big">Post an Item</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span>240+</span><p>Items Recovered</p></div>
+      <div class="stat"><span>1.2k</span><p>Students Helped</p></div>
+      <div class="stat"><span>98%</span><p>Success Rate</p></div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="phone-card">
+      <div class="card-label">Recently Found</div>
+      <div class="item-chip"><img src="https://img.icons8.com/fluency/48/backpack.png"/><span>Blue Backpack – Library</span></div>
+      <div class="item-chip"><img src="https://img.icons8.com/fluency/48/iphone.png"/><span>iPhone 14 – Cafeteria</span></div>
+      <div class="item-chip"><img src="https://img.icons8.com/fluency/48/glasses.png"/><span>Spectacles – Lab 3</span></div>
+      <div class="item-chip"><img src="https://img.icons8.com/fluency/48/wallet.png"/><span>Brown Wallet – Gym</span></div>
+      <div class="card-footer"><i class="fas fa-plus-circle"></i> 12 new items today</div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section">
+  <div class="section-label">HOW IT WORKS</div>
+  <h2>Simple Steps to<br/>Reunite with Your Stuff</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-icon"><i class="fas fa-user-plus"></i></div>
+      <h3>Create Account</h3>
+      <p>Sign up with your college email in seconds. It's completely free.</p>
+    </div>
+    <div class="step-arrow"><i class="fas fa-chevron-right"></i></div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-icon"><i class="fas fa-camera"></i></div>
+      <h3>Post or Browse</h3>
+      <p>Report a lost item or browse items already found on campus.</p>
+    </div>
+    <div class="step-arrow"><i class="fas fa-chevron-right"></i></div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-icon"><i class="fas fa-comments"></i></div>
+      <h3>Connect</h3>
+      <p>Message the finder/owner directly through our secure platform.</p>
+    </div>
+    <div class="step-arrow"><i class="fas fa-chevron-right"></i></div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <div class="step-icon"><i class="fas fa-handshake"></i></div>
+      <h3>Reunite!</h3>
+      <p>Pick up your item from the campus lost & found desk or directly.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="categories-section">
+  <div class="section-label">BROWSE BY CATEGORY</div>
+  <h2>What Are You<br/>Looking For?</h2>
+  <div class="cats">
+    <a href="items.html" class="cat-card">
+      <div class="cat-icon" style="background:#fde9d9"><img src="https://img.icons8.com/fluency/64/iphone.png"/></div>
+      <span>Electronics</span>
+    </a>
+    <a href="items.html" class="cat-card">
+      <div class="cat-icon" style="background:#d9f0e8"><img src="https://img.icons8.com/fluency/64/backpack.png"/></div>
+      <span>Bags</span>
+    </a>
+    <a href="items.html" class="cat-card">
+      <div class="cat-icon" style="background:#e9d9fd"><img src="https://img.icons8.com/fluency/64/wallet.png"/></div>
+      <span>Wallets & Cards</span>
+    </a>
+    <a href="items.html" class="cat-card">
+      <div class="cat-icon" style="background:#d9eafd"><img src="https://img.icons8.com/fluency/64/book.png"/></div>
+      <span>Books & Notes</span>
+    </a>
+    <a href="items.html" class="cat-card">
+      <div class="cat-icon" style="background:#fdfad9"><img src="https://img.icons8.com/fluency/64/key.png"/></div>
+      <span>Keys</span>
+    </a>
+    <a href="items.html" class="cat-card">
+      <div class="cat-icon" style="background:#fdd9d9"><img src="https://img.icons8.com/fluency/64/glasses.png"/></div>
+      <span>Accessories</span>
+    </a>
+  </div>
+</section>
+
+<!-- RECENT ITEMS -->
+<section class="recent-section">
+  <div class="section-label">RECENT ACTIVITY</div>
+  <h2>Latest Lost &<br/>Found Items</h2>
+  <div class="items-grid">
+    <div class="item-card found">
+      <div class="badge found-badge">Found</div>
+      <img src="https://img.icons8.com/fluency/96/iphone.png" alt="phone"/>
+      <div class="item-info">
+        <h4>iPhone 14 – Black</h4>
+        <p><i class="fas fa-map-marker-alt"></i> Cafeteria, Block B</p>
+        <p><i class="fas fa-clock"></i> 2 hours ago</p>
+      </div>
+      <a href="items.html" class="btn-sm">View</a>
+    </div>
+    <div class="item-card lost">
+      <div class="badge lost-badge">Lost</div>
+      <img src="https://img.icons8.com/fluency/96/backpack.png" alt="bag"/>
+      <div class="item-info">
+        <h4>Blue Nike Backpack</h4>
+        <p><i class="fas fa-map-marker-alt"></i> Library, 2nd Floor</p>
+        <p><i class="fas fa-clock"></i> 5 hours ago</p>
+      </div>
+      <a href="items.html" class="btn-sm">View</a>
+    </div>
+    <div class="item-card found">
+      <div class="badge found-badge">Found</div>
+      <img src="https://img.icons8.com/fluency/96/glasses.png" alt="glasses"/>
+      <div class="item-info">
+        <h4>Reading Glasses</h4>
+        <p><i class="fas fa-map-marker-alt"></i> Computer Lab 3</p>
+        <p><i class="fas fa-clock"></i> 1 day ago</p>
+      </div>
+      <a href="items.html" class="btn-sm">View</a>
+    </div>
+    <div class="item-card lost">
+      <div class="badge lost-badge">Lost</div>
+      <img src="https://img.icons8.com/fluency/96/wallet.png" alt="wallet"/>
+      <div class="item-info">
+        <h4>Leather Wallet</h4>
+        <p><i class="fas fa-map-marker-alt"></i> Sports Ground</p>
+        <p><i class="fas fa-clock"></i> 1 day ago</p>
+      </div>
+      <a href="items.html" class="btn-sm">View</a>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:2.5rem">
+    <a href="items.html" class="btn-fill big">View All Items <i class="fas fa-arrow-right"></i></a>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <h2>Found Something?<br/>Be a Campus Hero.</h2>
+    <p>Post what you found and help a fellow student get their item back. It only takes 2 minutes.</p>
+    <a href="signup.html" class="btn-fill big">Post a Found Item <i class="fas fa-plus"></i></a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="nav-logo"><span class="dot">●</span> FindIt</div>
+      <p>A student initiative by the Information Technology Department to make campus life better.</p>
+    </div>
+    <div class="footer-links">
+      <h5>Pages</h5>
+      <a href="index.html">Home</a>
+      <a href="items.html">Lost & Found</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-links">
+      <h5>Account</h5>
+      <a href="login.html">Login</a>
+      <a href="signup.html">Sign Up</a>
+    </div>
+    <div class="footer-links">
+      <h5>Contact</h5>
+      <a href="#">findit@college.edu</a>
+      <a href="#">IT Department, Block C</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 FindIt — Made with ❤️ by IT Students</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
